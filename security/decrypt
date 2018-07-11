@@ -1,0 +1,6 @@
+# https://unix.stackexchange.com/questions/162960/how-can-i-encrypt-a-file
+FILENAME=$1
+DEC="${FILENAME%.*}.txt"
+openssl enc -in $FILENAME \
+        -d -aes-256-cbc \
+        -pass stdin > $DEC
